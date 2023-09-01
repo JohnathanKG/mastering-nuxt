@@ -28,7 +28,7 @@ const login = async () => {
   const redirectTo = `${window.location.origin}${query.redirectTo}`;
   const {error} = await supabase.auth.signInWithOAuth({
     provider: 'github',
-    options: {redirectTo: redirectTo || "http://localhost:3000"},
+    options: {redirectTo: redirectTo},
   });
 
   if (error) {
